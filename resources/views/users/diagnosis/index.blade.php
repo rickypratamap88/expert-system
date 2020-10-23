@@ -24,15 +24,26 @@
             <div class="card-body">
                 <form action="{{ route('users.diagnosis.proccess') }}" method="POST">
                     @csrf
-                    @foreach ($symtoms as $symtom)
-                        <label class="checkbox checkbox-outline-primary">
-                            <input type="checkbox" id="{{ $symtom->id }}" name="symptom[]" value="{{ $symtom->id }}"/>
-                            <span>{{ $symtom->symptom }}</span>
-                            <span class="checkmark"></span>
-                        </label>
-                    @endforeach
 
-                    <div class="form-group mt-3">
+                    @forelse ($symtoms->chunk(3) as $chunks)
+                        <div class="row">
+                            @foreach ($chunks as $symtom)
+                                <div class="col-sm-4">
+                                    <label class="checkbox checkbox-outline-primary">
+                                        <input type="checkbox" id="{{ $symtom->id }}" name="symptom[]" value="{{ $symtom->id }}"/>
+                                        <span>{{$symtom->code . ' - ' . $symtom->symptom }}</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                    @empty
+                        <div>
+                            <p>Not Symptoms</p>
+                        </div>
+                    @endforelse
+
+                    <div class="form-group mt-3 text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>

@@ -317,7 +317,7 @@ class DiagnosisController extends Controller
 
     public function results()
     {
-        $diagnosis = DB::select("SELECT DISTINCT `temporary_finals`.`disease_id`, `temporary_finals`.`results`, `diseases`.* FROM `temporary_finals` JOIN `diseases` ON `temporary_finals`.`disease_id` = `diseases`.`id` ORDER BY `temporary_finals`.`results` DESC LIMIT 4");
+        $diagnosis = DB::select("SELECT DISTINCT `temporary_finals`.`disease_id`, `temporary_finals`.`results`, `diseases`.* FROM `temporary_finals` JOIN `diseases` ON `temporary_finals`.`disease_id` = `diseases`.`id` ORDER BY `temporary_finals`.`results` DESC LIMIT 3");
 
         $diagnosisMax = DB::select("SELECT `temporary_finals`.`id`, MAX(results) as `results`, `diseases`.* FROM temporary_finals JOIN `diseases` ON `temporary_finals`.`disease_id` = `diseases`.`id` GROUP BY `diseases`.`id` ORDER BY `results` DESC LIMIT 1");
 
