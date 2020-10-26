@@ -37,5 +37,7 @@
         </div>
     </div>
     
-    <script type="text/javascript" src="{{ asset('assets/assets') }}/scripts/main.js"></script></body>
+    <script type="text/javascript" src="{{ asset('assets/assets') }}/scripts/main.js"></script>
+    @include('sweetalert::alert')
+</body>
 </html>

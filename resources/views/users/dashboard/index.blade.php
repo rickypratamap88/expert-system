@@ -3,52 +3,30 @@
 @section('title', 'Users | Dashboard')
 
 @section('content')
-    
-    <!-- ============ Body content start ============= -->
-<div class="breadcrumb">
-    <h1>Dashboard</h1>
-    <ul>
-        <li><a href="{{ url('admin/dashboard') }}">User</a></li>
-        <li>Dashboard</li>
-    </ul>
-</div>
-<div class="separator-breadcrumb border-top"></div><!-- end of main-content -->
-
-<div class="row">
-    <div class="col-md-12">
-        <!-- CARD ICON-->
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card card-icon mb-4">
-                    <div class="card-body text-center">
-                        <i class="fas fa-users text-primary" style="font-size: 30px;"></i>
-                        <p class="text-muted mt-2 mb-2">Consultations</p>
-                        <p class="text-primary text-24 line-height-1 m-0">{{ $consultations->count() }}</p>
-                    </div>
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="metismenu-icon pe-7s-rocket icon-gradient bg-mean-fruit"></i>
                 </div>
-            </div>
-
-            <div class="col-sm-9">
-                <div class="card">
-                    <div class="card-header">
-                        Halo <code>{{ Auth::user()->name }}</code>, Selamat datang dilaboratoruim diagnosa penyakit ginjal!
+                <div>Dashboard</div>
+            </div>  
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Consultations</div>
                     </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <h5>Berikut adalah langkah-langkah untuk mengelola <code>dashboard</code> :</h5>
-                            
-                            <h6>1. Halaman <code>dashboard</code>, memberitahuakn bahwa <code>{{ Auth::user()->name }}</code>, sudah melakukan <code>{{ $consultations->count() }}</code> diagnosa didalam lab ini. </h6>
-                            <h6>2. Untuk melakukan diagnosa penyakit ginjal terdapat dimenu <code>Diagnosis</code> dan bisa dipilih gejala yang anda rasakan.</h6>
-                            <h6>3. Data hasil konsultasi anda akan tersimpan dengan aman dan bisa diakses kapanpun dan dimanapun.</h6>
-                            <h6>4. Untuk melihat hasil konsultasi terdapat dimenu <code>Consultations</code> lihat detail sesuai tanggal konsultasi anda.</h6>
-                            <h6>5. Untuk melakukan perubahan ketika terjadinya kesalahan dalam penulisan data diri ada bisa di klik <code>Settings -> Profile</code></h6>
-                            <h6>6. Untuk melakukan perubahan password anda bisa klik <code>Settings -> Password</code></h6>
-                        </blockquote>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>{{ $consultations->count() }}</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

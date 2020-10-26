@@ -17,7 +17,7 @@ class RulesController extends Controller
      */
     public function index()
     {
-        $rules = Rule::all();
+        $rules = Rule::paginate(10);
         return view('admin.rules.index', compact('rules'));
     }
 
@@ -30,7 +30,7 @@ class RulesController extends Controller
     {
         $diseases = Disease::latest()->get();
         $symptoms = Symptom::latest()->get();
-        return view('admin.rules.create', compact('diseases', 'symptoms'));
+        return view('admin.rules.form', compact('diseases', 'symptoms'));
     }
 
     /**
@@ -77,7 +77,7 @@ class RulesController extends Controller
     {
         $diseases = Disease::latest()->get();
         $symptoms = Symptom::latest()->get();
-        return view('admin.rules.edit', compact('rule', 'diseases', 'symptoms'));
+        return view('admin.rules.form', compact('rule', 'diseases', 'symptoms'));
     }
 
     /**

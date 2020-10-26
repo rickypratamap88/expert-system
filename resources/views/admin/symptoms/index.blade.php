@@ -2,79 +2,73 @@
 
 @section('title', 'Dashboard')
 
-@push('css')
-<link rel="stylesheet" href="{{ asset('assets/backend') }}/css/plugins/datatables.min.css" />
-@endpush
-
 @section('content')
-<div class="breadcrumb">
-    <h1>Gejala | </h1>
-    <a href="/admin/symptoms/create" class="btn btn-primary btn-sm">Create</a>
-</div>
-<div class="separator-breadcrumb border-top"></div><!-- end of main-content -->
 
-<div class="row">
-    <div class="col-md-12 mb-4">
-        <div class="card text-left">
-            <div class="card-body">
-                <h4 class="card-title mb-3">Data Gejala</h4>
-                <p>Sistem pakar diagnosa penyakit ginjal</p>
-                <div class="table-responsive">
-                    <table class="display table table-striped table-bordered" id="zero_configuration_table" style="width:100%">
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="metismenu-icon pe-7s-graph1">
+                    </i>
+                </div>
+                <div>Gejala</div>
+            </div>
+            <div class="page-title-actions">
+                <div class="d-inline-block">
+                    <a href="/admin/symptoms/create" class="btn-shadow  btn btn-info">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-plus fa-w-20"></i>
+                        </span>
+                        Create
+                    </a>
+                </div>
+            </div>    
+        </div>
+    </div>            
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body"><h5 class="card-title">Tabel Gejala</h5>
+                    <table class="mb-0 table">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th>#</th>
                                 <th>Code</th>
                                 <th>Name</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Created At</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($symptoms as $symptom)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $symptom->code }}</td>
-                                <td>{{ $symptom->symptom }}</td>
-                                <td>{{ $symptom->created_at }}</td>
-                                <td>{{ $symptom->updated_at }}</td>
-                                <td>
-                                    <a href="/admin/symptoms/{{ $symptom->id }}/edit" class="btn btn-primary btn-sm float-left mr-1">
-                                        <i class="far fa-edit"></i>
-                                    </a>
-                                    <form action="/admin/symptoms/{{ $symptom->id }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Data gejala akan terhapus')">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
-                                <th>Actions</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $symptom->code }}</td>
+                                    <td>{{ $symptom->symptom }}</td>
+                                    <td>{{ $symptom->created_at }}</td>
+                                    <td>
+                                        <a href="/admin/symptoms/{{ $symptom->id }}/edit" class="btn btn-info">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form action="/admin/symptoms/{{ $symptom->id }}" class="d-inline" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button onclick="return confirm('Data akan terhapus.')" type="submit" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div class="mt-3">
+                            {{ $symptoms->links() }}
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
-
-@push('js')
-<script src="{{ asset('assets/backend') }}/js/plugins/datatables.min.js"></script>
-<script src="{{ asset('assets/backend') }}/js/scripts/datatables.script.min.js"></script>
-@endpush

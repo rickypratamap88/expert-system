@@ -1,17 +1,14 @@
-@extends('layouts.backend.authentication')
+@extends('auth.main')
 
 @section('content')
-<div class="auth-layout-wrap bg-primary">
-    <div class="auth-content row justify-content-center">
-        <div class="card o-hidden col-lg-6">
-            <div class="row">
-                <div class="col-lg">
-                    <div class="p-4">
-
-                        <div class="auth-logo text-center mb-4">
-                            <img src="{{ asset('assets/backend') }}/images/logo.png">
-                        </div>
-
+<div class="container" style="margin-top: 100px">
+    <div class="row justify-content-center">
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-header">
+                    Login   
+                </div>
+                <div class="card-body">
                         <h1 class="mb-3 text-18">Register</h1>
 
                         <form method="POST" action="{{ route('register') }}">
@@ -52,9 +49,9 @@
                             </a>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

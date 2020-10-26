@@ -15,7 +15,7 @@ class SymptomsController extends Controller
      */
     public function index()
     {
-        $symptoms = Symptom::all();
+        $symptoms = Symptom::paginate(10);
         return view('admin.symptoms.index', compact('symptoms'));
     }
 
@@ -26,7 +26,7 @@ class SymptomsController extends Controller
      */
     public function create()
     {
-        return view('admin.symptoms.create');
+        return view('admin.symptoms.form');
     }
 
     /**
@@ -65,7 +65,7 @@ class SymptomsController extends Controller
      */
     public function edit(Symptom $symptom)
     {
-        return view('admin.symptoms.edit', compact('symptom'));
+        return view('admin.symptoms.form', compact('symptom'));
     }
 
     /**
