@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Disease;
+use App\{Disease, Rule, Symptom, User};
 use App\Http\Controllers\Controller;
-use App\Rule;
-use App\Symptom;
-use App\User;
 
 class DashboardController extends Controller
 {
