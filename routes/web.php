@@ -69,25 +69,6 @@ Route::group(
     }
 );
 
-Route::group(
-    ['namespace' => 'Front'],
-    function () {
-        Route::get('/', 'HomeController@index')->name('home');
-        Route::get('/blog', 'PostsController@index')->name('blogs.index');
-        Route::get('/blog/{post:slug}', 'PostsController@show')->name('blogs.show');
-        Route::get('about', 'AboutController@index')->name('about');
-
-        // category and tag
-        Route::get('/category/{slug}', 'PostsController@postsByCategory');
-        Route::get('/tag/{slug}', 'PostsController@postsByTag');
-        // END::category and tag
-
-        // Front - Route Blog Comment
-        Route::post('/blog/comments/{post}', 'CommentController@store');
-        // END::Front - Route Blog Comment
-
-        // Front - Route Blog Search
-        Route::get('/search', 'PostsController@blogSearch')->name('blog.search');
-        // END::Front - Route Blog Search
-    }
-);
+Route::get('/', function () {
+    return redirect('/login');
+});

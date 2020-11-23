@@ -61,42 +61,6 @@
                         </a>
                     </li>
 
-                    <li class="app-sidebar__heading">Blog</li>
-                    <li>
-                        <a href="#">
-                            <i class="metismenu-icon pe-7s-diamond"></i>
-                            Blogs
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="elements-buttons-standard.html">
-                                    <i class="metismenu-icon"></i>
-                                    Posts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="elements-dropdowns.html">
-                                    <i class="metismenu-icon"></i>
-                                    New Post
-                                </a>
-                            </li>
-                            <li>
-                                <a href="elements-icons.html">
-                                    <i class="metismenu-icon"></i>
-                                    Categories
-                                </a>
-                            </li>
-                            <li>
-                                <a href="elements-icons.html">
-                                    <i class="metismenu-icon"></i>
-                                    Tags
-                                </a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-
                     <li class="app-sidebar__heading">Settings</li>
                     <li>
                         <a href="/admin/profile" class="{{ Request::is('admin/profile') ? 'mm-active' : '' }}">
