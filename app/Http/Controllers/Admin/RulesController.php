@@ -17,7 +17,7 @@ class RulesController extends Controller
      */
     public function index()
     {
-        $rules = Rule::paginate(10);
+        $rules = Rule::latest()->get();
         return view('admin.rules.index', compact('rules'));
     }
 

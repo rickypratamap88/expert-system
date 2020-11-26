@@ -15,7 +15,7 @@ class SymptomsController extends Controller
      */
     public function index()
     {
-        $symptoms = Symptom::paginate(10);
+        $symptoms = Symptom::latest()->get();
         return view('admin.symptoms.index', compact('symptoms'));
     }
 

@@ -15,7 +15,7 @@ class DiseasesController extends Controller
      */
     public function index()
     {
-        $diseases = Disease::paginate(10);
+        $diseases = Disease::latest()->get();
         return view('admin.diseases.index', compact('diseases'));
     }
 

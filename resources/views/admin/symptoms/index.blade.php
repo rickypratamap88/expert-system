@@ -2,6 +2,10 @@
 
 @section('title', 'Dashboard')
 
+@push('css')
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/dataTables.bootstrap4.min.css') }}">
+@endpush
+
 @section('content')
 
 <div class="app-main__inner">
@@ -30,7 +34,7 @@
         <div class="col-lg-12">
             <div class="main-card mb-3 card">
                 <div class="card-body"><h5 class="card-title">Tabel Gejala</h5>
-                    <table class="mb-0 table">
+                    <table class="mb-0 table" id="datatable">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -63,12 +67,22 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="mt-3">
-                            {{ $symptoms->links() }}
-                        </div>
+                        
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
+@push('js')
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+        });
+    </script>
+@endpush

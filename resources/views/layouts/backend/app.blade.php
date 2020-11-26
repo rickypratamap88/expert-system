@@ -13,6 +13,8 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <link href="{{ asset('assets') }}/main.css" rel="stylesheet">
+
+    @stack('css')
 </head>
 
 <body>
@@ -36,8 +38,11 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
     
     <script type="text/javascript" src="{{ asset('assets/assets') }}/scripts/main.js"></script>
+    @stack('js')
     @include('sweetalert::alert')
 </body>
 </html>
