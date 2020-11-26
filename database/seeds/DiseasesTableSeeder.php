@@ -95,7 +95,7 @@ class DiseasesTableSeeder extends Seeder
 
         Disease::create([
             'code' => 'P10',
-            'name' => 'Karies Media',
+            'name' => 'Karies Profunda',
             'probability' => '0.1',
             'appear' => '2',
             'information' => '<p>Belum</p>',
@@ -131,7 +131,7 @@ class DiseasesTableSeeder extends Seeder
 
         Disease::create([
             'code' => 'P14',
-            'name' => 'Nekrosis pulpa',
+            'name' => 'Nekrosis Pulpa',
             'probability' => '0.1',
             'appear' => '2',
             'information' => '<p>Belum</p>',

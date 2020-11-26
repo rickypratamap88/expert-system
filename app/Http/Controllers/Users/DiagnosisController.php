@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Consultation;
-use App\Disease;
+use App\{Consultation, Disease, Symptom, Temporary, TemporaryFinal};
 use App\Http\Controllers\Controller;
-use App\Symptom;
-use App\Temporary;
-use App\TemporaryFinal;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\{Auth, DB};
 
 class DiagnosisController extends Controller
 {
@@ -20,11 +15,13 @@ class DiagnosisController extends Controller
         return view('users.diagnosis.index', compact('symtoms'));
     }
 
-    public function getProbGagalGinjal()
+
+    // penyakit
+    public function getProbAbsesPeriodontal()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 1)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 1)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 1)->get() as $data) {
@@ -33,11 +30,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbKankerGinjal()
+    public function getProbAbsesPeripikal()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 2)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 2)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 2)->get() as $data) {
@@ -46,11 +43,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbInfeksiGinjal()
+    public function getProbAlveolarOsteitis()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 3)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 3)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 3)->get() as $data) {
@@ -59,11 +56,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbSindromNefrotik()
+    public function getProbAbrasiGigi()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 4)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 4)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 4)->get() as $data) {
@@ -72,11 +69,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbHidronefrosis()
+    public function getProbBruxism()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 5)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 5)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 5)->get() as $data) {
@@ -85,11 +82,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbKankerKandungKemih()
+    public function getProbGingivitis()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 6)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 6)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 6)->get() as $data) {
@@ -98,11 +95,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbGinjalPolikistik()
+    public function getProbGangguanGigiBungsu()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 7)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 7)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 7)->get() as $data) {
@@ -111,11 +108,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbNefritisInterstisial()
+    public function getProbAngularCeilitis()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 8)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 8)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 8)->get() as $data) {
@@ -124,11 +121,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbSistitisInterstisialis()
+    public function getProbKariesMedia()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 9)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 9)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 9)->get() as $data) {
@@ -137,11 +134,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbInfeksiSaluranKemih()
+    public function getProbKariesProfunda()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 10)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 10)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 10)->get() as $data) {
@@ -150,11 +147,11 @@ class DiagnosisController extends Controller
         return $result;
     }
 
-    public function getProbBatuGinjal()
+    public function getProbKariesSuperfisial()
     {
         $total = 1;
-        foreach (TemporaryFinal::where('disease_id', 11)->get() as $probKidney) {
-            $total = $total * $probKidney->probability;
+        foreach (TemporaryFinal::where('disease_id', 11)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
         }
 
         foreach (Disease::where('id', 11)->get() as $data) {
@@ -163,63 +160,147 @@ class DiagnosisController extends Controller
         return $result;
     }
 
+    public function getProbKandidiasis()
+    {
+        $total = 1;
+        foreach (TemporaryFinal::where('disease_id', 12)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
+        }
+
+        foreach (Disease::where('id', 12)->get() as $data) {
+            $result = $total * $data->probability;
+        }
+        return $result;
+    }
+
+    public function getProbKalkulus()
+    {
+        $total = 1;
+        foreach (TemporaryFinal::where('disease_id', 13)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
+        }
+
+        foreach (Disease::where('id', 13)->get() as $data) {
+            $result = $total * $data->probability;
+        }
+        return $result;
+    }
+
+    public function getProbNekrosisPulpa()
+    {
+        $total = 1;
+        foreach (TemporaryFinal::where('disease_id', 14)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
+        }
+
+        foreach (Disease::where('id', 14)->get() as $data) {
+            $result = $total * $data->probability;
+        }
+        return $result;
+    }
+    
+    public function getProbPeriodontitis()
+    {
+        $total = 1;
+        foreach (TemporaryFinal::where('disease_id', 15)->get() as $probTooth) {
+            $total = $total * $probTooth->probability;
+        }
+
+        foreach (Disease::where('id', 15)->get() as $data) {
+            $result = $total * $data->probability;
+        }
+        return $result;
+    }
+
+
+
+
+
+
+
 
     // hasil perhitungan probabilitas
-    public function resultProbGagalGinjal($gagalGinjal)
+    public function resultProbAbsesPeriodontal($absesPeriodontal)
     {
-        TemporaryFinal::where('disease_id', 1)->update(['results' => $gagalGinjal]);
+        TemporaryFinal::where('disease_id', 1)->update(['results' => $absesPeriodontal]);
     }
 
-    public function resultProbKankerGinjal($kankerGinjal)
+    public function resultProbAbsesPeripikal($absesPeripikal)
     {
-        TemporaryFinal::where('disease_id', 2)->update(['results' => $kankerGinjal]);
+        TemporaryFinal::where('disease_id', 2)->update(['results' => $absesPeripikal]);
     }
 
-    public function resultProbInfeksiGinjal($infeksiGinjal)
+    public function resultProbAlveolarOsteitis($alveolarOsteitis)
     {
-        TemporaryFinal::where('disease_id', 3)->update(['results' => $infeksiGinjal]);
+        TemporaryFinal::where('disease_id', 3)->update(['results' => $alveolarOsteitis]);
     }
 
-    public function resultProbSindromNefrotik($sindromNefrotik)
+    public function resultProbAbrasiGigi($abrasiGigi)
     {
-        TemporaryFinal::where('disease_id', 4)->update(['results' => $sindromNefrotik]);
+        TemporaryFinal::where('disease_id', 4)->update(['results' => $abrasiGigi]);
     }
 
-    public function resultProbHidronefrosis($hidronefrosis)
+    public function resultProbBruxism($bruxism)
     {
-        TemporaryFinal::where('disease_id', 5)->update(['results' => $hidronefrosis]);
+        TemporaryFinal::where('disease_id', 5)->update(['results' => $bruxism]);
     }
 
-    public function resultProbKankerKandungKemih($kankerKandungKemih)
+    public function resultProbGingivitis($gingivitis)
     {
-        TemporaryFinal::where('disease_id', 6)->update(['results' => $kankerKandungKemih]);
+        TemporaryFinal::where('disease_id', 6)->update(['results' => $gingivitis]);
     }
 
-    public function resultProbGinjalPolikistik($ginjalPolikistik)
+    public function resultProbGangguanGigiBungsu($gangguanGigiBungsu)
     {
-        TemporaryFinal::where('disease_id', 7)->update(['results' => $ginjalPolikistik]);
+        TemporaryFinal::where('disease_id', 7)->update(['results' => $gangguanGigiBungsu]);
     }
 
-    public function resultProbNefritisInterstisial($nefritisInterstisial)
+    public function resultProbAngularCeilitis($angularCeilitis)
     {
-        TemporaryFinal::where('disease_id', 8)->update(['results' => $nefritisInterstisial]);
+        TemporaryFinal::where('disease_id', 8)->update(['results' => $angularCeilitis]);
     }
 
-    public function resultProbSistitisInterstisialis($sistitisInterstisialis)
+    public function resultProbKariesMedia($kariesMedia)
     {
-        TemporaryFinal::where('disease_id', 9)->update(['results' => $sistitisInterstisialis]);
+        TemporaryFinal::where('disease_id', 9)->update(['results' => $kariesMedia]);
     }
 
-    public function resultProbInfeksiSaluranKemih($infeksiSaluranKemih)
+    public function resultProbKariesProfunda($kariesProfunda)
     {
-        TemporaryFinal::where('disease_id', 10)->update(['results' => $infeksiSaluranKemih]);
+        TemporaryFinal::where('disease_id', 10)->update(['results' => $kariesProfunda]);
     }
 
-    public function resultProbBatuGinjal($batuGinjal)
+    public function resultProbKariesSuperfisial($kariesSuperfisial)
     {
-        TemporaryFinal::where('disease_id', 11)->update(['results' => $batuGinjal]);
+        TemporaryFinal::where('disease_id', 11)->update(['results' => $kariesSuperfisial]);
+    }
+
+    public function resultProbKandidiasis($kandidiasis)
+    {
+        TemporaryFinal::where('disease_id', 12)->update(['results' => $kandidiasis]);
+    }
+
+    public function resultProbKalkulus($kalkulus)
+    {
+        TemporaryFinal::where('disease_id', 13)->update(['results' => $kalkulus]);
+    }
+
+    public function resultProbNekrosisPulpa($nekrosisPulpa)
+    {
+        TemporaryFinal::where('disease_id', 14)->update(['results' => $nekrosisPulpa]);
+    }
+
+    public function resultProbPeriodontitis($periodontitis)
+    {
+        TemporaryFinal::where('disease_id', 15)->update(['results' => $periodontitis]);
     }
     // END:: hasil perhitungan probabilitas
+
+
+
+
+
+
 
 
     public function proccess(Request $request)
@@ -248,57 +329,76 @@ class DiagnosisController extends Controller
             ]);
         }
 
-        $probGagalGinjal = $this->getProbGagalGinjal();
-        $probKankerGinjal = $this->getProbKankerGinjal();
-        $probInfeksiGinjal = $this->getProbInfeksiGinjal();
-        $probSindromNefrotik = $this->getProbSindromNefrotik();
-        $probHidronefrosis = $this->getProbHidronefrosis();
-        $probKankerKandungKemih = $this->getProbKankerKandungKemih();
-        $probGinjalPolikistik = $this->getProbGinjalPolikistik();
-        $probNefritisInterstisial = $this->getProbNefritisInterstisial();
-        $probSistitisInterstisialis = $this->getProbSistitisInterstisialis();
-        $probInfeksiSaluranKemih = $this->getProbInfeksiGinjal();
-        $probBatuGinjal = $this->getProbBatuGinjal();
+        $probAbsesPeriodontal = $this->getProbAbsesPeriodontal();
+        $probAbsesPeripikal = $this->getProbAbsesPeripikal();
+        $probAlveolarOsteitis = $this->getProbAlveolarOsteitis();
+        $probAbrasiGigi = $this->getProbAbrasiGigi();
+        $probBruxism = $this->getProbBruxism();
+        $probGingivitis = $this->getProbGingivitis();
+        $probGangguanGigiBungsu = $this->getProbGangguanGigiBungsu();
+        $probAngularCeilitis = $this->getProbAngularCeilitis();
+        $probKariesMedia = $this->getProbKariesMedia();
+        $probKariesProfunda = $this->getProbKariesProfunda();
+        $probKariesSuperfisial = $this->getProbKariesSuperfisial();
+        $probKandidiasis = $this->getProbKandidiasis();
+        $probKalkulus = $this->getProbKalkulus();
+        $probNekrosisPulpa = $this->getProbNekrosisPulpa();
+        $probPeriodontitis = $this->getProbPeriodontitis();
 
         $data = [
-            'gagalGinjal' => $probGagalGinjal,
-            'kankerGinjal' => $probKankerGinjal,
-            'infeksiGinjal' => $probInfeksiGinjal,
-            'sindromNefrotik' => $probSindromNefrotik,
-            'hidronefrosis' => $probHidronefrosis,
-            'kankerKandungKemih' => $probKankerKandungKemih,
-            'ginjalPolikistik' => $probGinjalPolikistik,
-            'nefritisInterstisial' => $probNefritisInterstisial,
-            'sistitisInterstisialis' => $probSistitisInterstisialis,
-            'infeksiSaluranKemih' => $probInfeksiSaluranKemih,
-            'batuGinjal' => $probBatuGinjal
+            'absesPeriodontal' => $probAbsesPeriodontal,
+            'absesPeripikal' => $probAbsesPeripikal,
+            'alveolarOsteitis' => $probAlveolarOsteitis,
+            'abrasiGigi' => $probAbrasiGigi,
+            'bruxism' => $probBruxism,
+            'gingivitis' => $probGingivitis,
+            'gangguanGigiBungsu' => $probGangguanGigiBungsu,
+            'angularCeilitis' => $probAngularCeilitis,
+            'kariesMedia' => $probKariesMedia,
+            'kariesProfunda' => $probKariesProfunda,
+            'kariesSuperfisial' => $probKariesSuperfisial,
+            'kandidiasis' => $probKandidiasis,
+            'kalkulus' => $probKalkulus,
+            'nekrosisPulpa' => $probNekrosisPulpa,
+            'periodontitis' => $probPeriodontitis
         ];
 
         $totalProbability = array_sum($data);
 
-        $gagalGinjal = ($probGagalGinjal / $totalProbability);
-        $kankerGinjal = ($probKankerGinjal / $totalProbability);
-        $infeksiGinjal = ($probInfeksiGinjal / $totalProbability);
-        $sindromNefrotik = ($probSindromNefrotik / $totalProbability);
-        $hidronefrosis = ($probHidronefrosis / $totalProbability);
-        $kankerKandungKemih = ($probKankerKandungKemih / $totalProbability);
-        $ginjalPolikistik = ($probGinjalPolikistik / $totalProbability);
-        $nefritisInterstisial = ($probNefritisInterstisial / $totalProbability);
-        $sistitisInterstisialis = ($probSistitisInterstisialis / $totalProbability);
-        $infeksiSaluranKemih = ($probInfeksiSaluranKemih / $totalProbability);
-        $batuGinjal = ($probBatuGinjal / $totalProbability);
+        $absesPeriodontal = ($probAbsesPeriodontal / $totalProbability);
+        $absesPeripikal = ($probAbsesPeripikal / $totalProbability);
+        $alveolarOsteitis = ($probAlveolarOsteitis / $totalProbability);
+        $abrasiGigi = ($probAbrasiGigi / $totalProbability);
+        $bruxism = ($probBruxism / $totalProbability);
+        $gingivitis = ($probGingivitis / $totalProbability);
+        $gangguanGigiBungsu = ($probGangguanGigiBungsu / $totalProbability);
+        $angularCeilitis = ($probAngularCeilitis / $totalProbability);
+        $kariesMedia = ($probKariesMedia / $totalProbability);
+        $kariesProfunda = ($probKariesProfunda / $totalProbability);
+        $kariesSuperfisial = ($probKariesSuperfisial / $totalProbability);
+        $kandidiasis = ($probKandidiasis / $totalProbability);
+        $kalkulus = ($probKalkulus / $totalProbability);
+        $nekrosisPulpa = ($probNekrosisPulpa / $totalProbability);
+        $periodontitis = ($probPeriodontitis / $totalProbability);
 
-        $this->resultProbGagalGinjal($gagalGinjal);
-        $this->resultProbKankerGinjal($kankerGinjal);
-        $this->resultProbInfeksiGinjal($infeksiGinjal);
-        $this->resultProbSindromNefrotik($sindromNefrotik);
-        $this->resultProbHidronefrosis($hidronefrosis);
-        $this->resultProbKankerKandungKemih($kankerKandungKemih);
-        $this->resultProbGinjalPolikistik($ginjalPolikistik);
-        $this->resultProbNefritisInterstisial($nefritisInterstisial);
-        $this->resultProbSistitisInterstisialis($sistitisInterstisialis);
-        $this->resultProbInfeksiSaluranKemih($infeksiSaluranKemih);
-        $this->resultProbBatuGinjal($batuGinjal);
+
+        $this->resultProbAbsesPeriodontal($absesPeriodontal);
+        $this->resultProbAbsesPeripikal($absesPeripikal);
+        $this->resultProbAlveolarOsteitis($alveolarOsteitis);
+        $this->resultProbAbrasiGigi($abrasiGigi);
+        $this->resultProbBruxism($bruxism);
+        $this->resultProbGingivitis($gingivitis);
+        $this->resultProbGangguanGigiBungsu($gangguanGigiBungsu);
+        $this->resultProbAngularCeilitis($angularCeilitis);
+        $this->resultProbKariesMedia($kariesMedia);
+        $this->resultProbKariesProfunda($kariesProfunda);
+        $this->resultProbKariesSuperfisial($kariesSuperfisial);
+        $this->resultProbKandidiasis($kandidiasis);
+        $this->resultProbKalkulus($kalkulus);
+        $this->resultProbNekrosisPulpa($nekrosisPulpa);
+        $this->resultProbPeriodontitis($periodontitis);
+
+
 
         $diagnosisMax = DB::select("SELECT `temporary_finals`.`id`, MAX(results) as `results`, `diseases`.* FROM temporary_finals JOIN `diseases` ON `temporary_finals`.`disease_id` = `diseases`.`id` GROUP BY `diseases`.`id` ORDER BY `results` DESC LIMIT 1");
 
@@ -324,3 +424,16 @@ class DiagnosisController extends Controller
         return view('users.diagnosis.results', compact('diagnosis', 'diagnosisMax'));
     }
 }
+
+
+        // $gagalGinjal = ($probGagalGinjal / $totalProbability);
+        // $kankerGinjal = ($probKankerGinjal / $totalProbability);
+        // $infeksiGinjal = ($probInfeksiGinjal / $totalProbability);
+        // $sindromNefrotik = ($probSindromNefrotik / $totalProbability);
+        // $hidronefrosis = ($probHidronefrosis / $totalProbability);
+        // $kankerKandungKemih = ($probKankerKandungKemih / $totalProbability);
+        // $ginjalPolikistik = ($probGinjalPolikistik / $totalProbability);
+        // $nefritisInterstisial = ($probNefritisInterstisial / $totalProbability);
+        // $sistitisInterstisialis = ($probSistitisInterstisialis / $totalProbability);
+        // $infeksiSaluranKemih = ($probInfeksiSaluranKemih / $totalProbability);
+        // $batuGinjal = ($probBatuGinjal / $totalProbability);

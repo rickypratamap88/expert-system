@@ -20,10 +20,10 @@
                 <form action="{{ route('users.diagnosis.proccess') }}" method="POST">
                     @csrf
 
-                    @forelse ($symtoms->chunk(3) as $chunks)
+                    @forelse ($symtoms->chunk(2) as $chunks)
                         <div class="row">
                             @foreach ($chunks as $symtom)
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <label class="checkbox checkbox-outline-primary">
                                         <input type="checkbox" id="{{ $symtom->id }}" name="symptom[]" value="{{ $symtom->id }}"/>
                                         <span>{{$symtom->code . ' - ' . $symtom->symptom }}</span>
