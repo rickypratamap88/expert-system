@@ -1,8 +1,7 @@
 <?php
 
-use Carbon\Carbon;
+use App\Symptom;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class SymtomsTableSeeder extends Seeder
 {
@@ -13,214 +12,189 @@ class SymtomsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G01',
-            'symptom' => 'Berkurang rasa terutama ditangan',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Pembengkakan atau peradangan pada gusi',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G02',
-            'symptom' => 'Darah didalam urin',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Sulit mengunyah',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G03',
-            'symptom' => 'Demam',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Gigi bergoyang',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G04',
-            'symptom' => 'Desakan dalam kencing',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Bau mulut tak sedap',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G05',
-            'symptom' => 'Kejang',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Rahang terjadi pembengkakan',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G06',
-            'symptom' => 'Kencing dimalam hari',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Rasa sakit atau nyeri di sekitar gusi',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G07',
-            'symptom' => 'Menggigil',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Demam',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G08',
-            'symptom' => 'Mual',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Pembengkakan kelenjar getah bening sekitar rahang atau leher ',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G09',
-            'symptom' => 'Mudah Lelah',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Pembengkakan / Nanah disertai rasa sakit atau nyeri disekitar gusi',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G10',
-            'symptom' => 'Muntah',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Rasa sakit yang hebat selama beberapa hari pencabutan gigi',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G11',
-            'symptom' => 'Nafsu makan menurun',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Tulang terlihat pada Socket',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G12',
-            'symptom' => 'Nanah diurin',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Gigi terasa ngilu dan sensitif',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G13',
-            'symptom' => 'Nyeri ditulang pinggul',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Bentuk gigi tampak terkikis',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G14',
-            'symptom' => 'Nyeri didaerah kandung kemih',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Sakit kepala',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G15',
-            'symptom' => 'Nyeri didaerah ginjal',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Insomnia atau merasa gelisah',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G16',
-            'symptom' => 'Nyeri ketika kencingl',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Suara gemeretak gigi yang terdengar ketika tidur',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G17',
-            'symptom' => 'Nyeri perut',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Gusi mudah berdarah',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G18',
-            'symptom' => 'Nyeri punggung dibagian bawah',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Bentuk gusi agak membulat',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G19',
-            'symptom' => 'Nyeri yang hilang timbull',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Konsistensi gusi menjadi lunak',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G20',
-            'symptom' => 'Pembengkakan bagian tubuh tertentu',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Pembengkakan atau peradangan pada gusi paling belakang',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G21',
-            'symptom' => 'Pembengkakan yang menyeluruhl',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Kemerahan pada sudut-sudut mulut',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G22',
-            'symptom' => 'Penurunan berat badan',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Sudut mulut terasa nyeri',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G23',
-            'symptom' => 'Perubahan mental / suasana hati',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Sudut mulut bersisik',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G24',
-            'symptom' => 'Rambut dan kuku menjadi rapuh',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Ulkulus (luka pada sudut mulut)',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G25',
-            'symptom' => 'Ruam kulit / kulit kemerahan',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Gigi Berlubang',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G26',
-            'symptom' => 'Sering kencing',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Dentin terlihat',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G27',
-            'symptom' => 'Syok atau kaget',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Pulpa terinfeksi/radang pada pulpa',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G28',
-            'symptom' => 'Tekanan darah tinggi',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Sakit berdenyut tanpa rasangan',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G29',
-            'symptom' => 'Tremor tangan',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Bintik putih pada gigi',
         ]);
 
-        DB::table('symptoms')->insert([
+        Symptom::create([
             'code' => 'G30',
-            'symptom' => 'Volume urin berkurang',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'symptom' => 'Bercak putih pada lidah',
+        ]);
+
+        Symptom::create([
+            'code' => 'G31',
+            'symptom' => 'Bercak putih pada rongga mulut',
+        ]);
+
+        Symptom::create([
+            'code' => 'G32',
+            'symptom' => 'Terdapat endapan plak',
+        ]);
+
+        Symptom::create([
+            'code' => 'G33',
+            'symptom' => 'Terdapat karang gigi',
+        ]);
+
+        Symptom::create([
+            'code' => 'G34',
+            'symptom' => 'Pembusukan gigi Dan pulpa mati rasa',
+        ]);
+
+        Symptom::create([
+            'code' => 'G35',
+            'symptom' => 'Ruang pulpa terbuka',
+        ]);
+
+        Symptom::create([
+            'code' => 'G36',
+            'symptom' => 'Gusi atau gigi bernanah',
+        ]);
+
+        Symptom::create([
+            'code' => 'G37',
+            'symptom' => 'Gusi berwarna merah',
         ]);
     }
 }
