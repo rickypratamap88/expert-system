@@ -12,23 +12,24 @@ class RulesTableSeeder extends Seeder
      */
     public function run()
     {
+        //--------------------
         // Penyakit {{ P01 }}
+        //--------------------
         Rule::create([
             'disease_id' => '1',
             'symptom_id' => '1',
             'probability' => 0.50,
         ]);
-
         Rule::create([
             'disease_id' => '1',
             'symptom_id' => '2',
-            'probability' => 0.50,
+            'probability' => 1.00,
         ]);
 
         Rule::create([
             'disease_id' => '1',
             'symptom_id' => '3',
-            'probability' => 0.50,
+            'probability' => 1.00,
         ]);
 
         Rule::create([
@@ -236,15 +237,14 @@ class RulesTableSeeder extends Seeder
         ]);
 
 
-
-
+        //--------------------
         // Penyakit {{ P02 }}
+        //--------------------
         Rule::create([
             'disease_id' => '2',
             'symptom_id' => '1',
             'probability' => 0.00001,
         ]);
-
         Rule::create([
             'disease_id' => '2',
             'symptom_id' => '2',
@@ -463,13 +463,14 @@ class RulesTableSeeder extends Seeder
 
 
 
+        //--------------------
         // Penyakit {{ P03 }}
+        //--------------------
         Rule::create([
             'disease_id' => '3',
             'symptom_id' => '1',
             'probability' => 0.00001,
         ]);
-
         Rule::create([
             'disease_id' => '3',
             'symptom_id' => '2',
@@ -563,7 +564,7 @@ class RulesTableSeeder extends Seeder
         Rule::create([
             'disease_id' => '3',
             'symptom_id' => '17',
-            'probability' => 0.00001,
+            'probability' => 0.50,
         ]);
 
         Rule::create([
@@ -688,14 +689,14 @@ class RulesTableSeeder extends Seeder
 
 
 
-        
+        //--------------------
         // Penyakit {{ P04 }}
+        //--------------------
         Rule::create([
             'disease_id' => '4',
             'symptom_id' => '1',
             'probability' => 0.00001,
         ]);
-
         Rule::create([
             'disease_id' => '4',
             'symptom_id' => '2',
@@ -914,14 +915,14 @@ class RulesTableSeeder extends Seeder
 
 
 
-        
+        //--------------------
         // Penyakit {{ P05 }}
+        //--------------------
         Rule::create([
             'disease_id' => '5',
             'symptom_id' => '1',
             'probability' => 0.00001,
         ]);
-
         Rule::create([
             'disease_id' => '5',
             'symptom_id' => '2',
@@ -1140,14 +1141,14 @@ class RulesTableSeeder extends Seeder
 
 
 
-
+        //--------------------
         // Penyakit {{ P06 }}
+        //--------------------
         Rule::create([
             'disease_id' => '6',
             'symptom_id' => '1',
             'probability' => 1.00,
         ]);
-
         Rule::create([
             'disease_id' => '6',
             'symptom_id' => '2',
@@ -1247,7 +1248,7 @@ class RulesTableSeeder extends Seeder
         Rule::create([
             'disease_id' => '6',
             'symptom_id' => '18',
-            'probability' => 1.00,
+            'probability' => 1.00
         ]);
 
         Rule::create([
@@ -1365,10 +1366,9 @@ class RulesTableSeeder extends Seeder
         ]);
 
 
-
-
-
+        //--------------------
         // Penyakit {{ P07 }}
+        //--------------------
         Rule::create([
             'disease_id' => '7',
             'symptom_id' => '1',
@@ -1591,10 +1591,11 @@ class RulesTableSeeder extends Seeder
             'probability' => 0.00001,
         ]);
 
+        
 
-
-
+        //--------------------
         // Penyakit {{ P08 }}
+        //--------------------
         Rule::create([
             'disease_id' => '8',
             'symptom_id' => '1',
@@ -1818,10 +1819,9 @@ class RulesTableSeeder extends Seeder
         ]);
 
 
-
-
-
+        //--------------------
         // Penyakit {{ P09 }}
+        //--------------------
         Rule::create([
             'disease_id' => '9',
             'symptom_id' => '1',
@@ -2046,8 +2046,9 @@ class RulesTableSeeder extends Seeder
 
 
 
-
-        // Penyakit {{ P010 }}
+        //--------------------
+        // Penyakit {{ P10 }}
+        //--------------------
         Rule::create([
             'disease_id' => '10',
             'symptom_id' => '1',
@@ -2272,8 +2273,9 @@ class RulesTableSeeder extends Seeder
 
 
 
-
-        // Penyakit {{ P011 }}
+        //--------------------
+        // Penyakit {{ P11 }}
+        //--------------------
         Rule::create([
             'disease_id' => '11',
             'symptom_id' => '1',
@@ -2497,9 +2499,9 @@ class RulesTableSeeder extends Seeder
         ]);
 
 
-
-
-        // Penyakit {{ P012 }}
+        //--------------------
+        // Penyakit {{ P12 }}
+        //--------------------
         Rule::create([
             'disease_id' => '12',
             'symptom_id' => '1',
@@ -2723,9 +2725,9 @@ class RulesTableSeeder extends Seeder
         ]);
 
 
-
-
-        // Penyakit {{ P013 }}
+        //--------------------
+        // Penyakit {{ P13 }}
+        //--------------------
         Rule::create([
             'disease_id' => '13',
             'symptom_id' => '1',
@@ -2950,8 +2952,9 @@ class RulesTableSeeder extends Seeder
 
 
 
-
-        // Penyakit {{ P014 }}
+        //--------------------
+        // Penyakit {{ P14 }}
+        //--------------------
         Rule::create([
             'disease_id' => '14',
             'symptom_id' => '1',
@@ -3176,8 +3179,9 @@ class RulesTableSeeder extends Seeder
 
 
 
-
-        // Penyakit {{ P015 }}
+        //--------------------
+        // Penyakit {{ P15 }}
+        //--------------------
         Rule::create([
             'disease_id' => '15',
             'symptom_id' => '1',
@@ -3385,7 +3389,7 @@ class RulesTableSeeder extends Seeder
         Rule::create([
             'disease_id' => '15',
             'symptom_id' => '35',
-            'probability' => 0.00001,
+            'probability' => 0.00001
         ]);
 
         Rule::create([
