@@ -16,14 +16,6 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'role_id' => '1',
-            'name' => 'Abdul Rosyid',
-            'username' => 'abdulrosyid',
-            'email' => 'hi@abdulrosyid.com',
-            'password' => bcrypt('admin')
-        ]);
-            
-        User::create([
-            'role_id' => '1',
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@admin.com',
@@ -32,16 +24,8 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'role_id' => '2',
-            'name' => 'Rosyid Abdul',
-            'username' => 'rosyidabdul',
-            'email' => 'dev.abdulrosyid@gmail.com',
-            'password' => bcrypt('user'),
-        ]);
-
-        User::create([
-            'role_id' => '2',
-            'name' => 'Rosyid Abdul',
-            'username' => 'rosyidabdul',
+            'name' => 'User',
+            'username' => 'user',
             'email' => 'user@user.com',
             'password' => bcrypt('user'),
         ]);
